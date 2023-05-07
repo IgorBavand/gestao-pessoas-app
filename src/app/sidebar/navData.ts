@@ -1,7 +1,7 @@
 export const navBarData = [
   {
     routeLink: 'dashboard',
-    icon: 'fa fa-home',
+    icon: 'fa-solid fa-chart-line',
     label: 'Dashboard',
   },
 

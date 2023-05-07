@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BodyComponent } from './body/body.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
+import { CadastroPessoasComponent } from './components/graficos/cadastro-pessoas/cadastro-pessoas.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SidebarComponent,
     BodyComponent,
     DashboardComponent,
+    CadastroPessoasComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
