@@ -9,7 +9,7 @@ export class PessoaService {
 
   constructor() {}
 
-  renomeiaVariavel() {
+  buscarPessoas() {
     return axios.get(`${this.urlBase}/api/pessoas`);
   }
 }

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PessoaService } from './services/pessoa.service';
+import { CdkTableDataSourceInput } from '@angular/cdk/table';
 
 export interface PeriodicElement {
   name: string;
@@ -26,8 +27,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './pessoa.component.html',
   styleUrls: ['./pessoa.component.scss'],
 })
-export class PessoaComponent {
+export class PessoaComponent implements OnInit {
+  public dataSource: any;
+
+  constructor(private service: PessoaService) {}
+
+  ngOnInit(): void {
+    this.dataSource = this.buscarPessoas();
+  }
+
+  async buscarPessoas(): Promise<any> {
+    const busca = await this.service.buscarPessoas();
+    return busca.data;
+  }
+
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
   clickedRows = new Set<PeriodicElement>();
 }

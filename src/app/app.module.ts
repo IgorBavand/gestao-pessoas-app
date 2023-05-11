@@ -14,6 +14,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { CadastroPessoasComponent } from './components/graficos/cadastro-pessoas/cadastro-pessoas.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NgChartsModule,
     MatTableModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
