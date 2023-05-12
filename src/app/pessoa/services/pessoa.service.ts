@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import axios from 'axios';
+import { HttpClient } from '@angular/common/http';
+import { PessoaDto } from '../dto/pessoa.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +8,9 @@ import axios from 'axios';
 export class PessoaService {
   urlBase = 'http://localhost:8050';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   buscarPessoas() {
-    return axios.get(`${this.urlBase}/api/pessoas`);
+    return this.http.get<PessoaDto[]>(`${this.urlBase}/api/pessoas`);
   }
 }
