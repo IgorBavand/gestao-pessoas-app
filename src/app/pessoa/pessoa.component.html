@@ -30,6 +30,10 @@
 
 </div>
 
+<div>
+  <a class="btn" routerLink="/cadastro-pessoa">Cadastrar Pessoa</a>
+</div>
+
 <table mat-table
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
@@ -53,7 +57,8 @@
       <div class="example-element-detail"
            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
         <div class="example-element-diagram">
-          <div class="example-element-position"> {{element.nome}} </div>
+          <!-- <div class="example-element-position"> {{element.nome}} </div> -->
+          <img src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg" alt="" width="100px">
           
         </div>
         <div class="example-element-description">

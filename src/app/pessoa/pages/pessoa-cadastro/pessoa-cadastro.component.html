@@ -1,0 +1,29 @@
+<div class="example-container div-cadastro">
+  <h2>Novo cadastro</h2>
+  <form (ngSubmit)="salvarPessoa(form.value)" #form="ngForm">
+    <div class="div-cadastro-inputs">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nome da pessoa</mat-label>
+        <input matInput name="nome" ngModel>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input matInput name="cpf" ngModel>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput name="email" ngModel>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Idade</mat-label>
+        <input matInput name="idade" ngModel>
+      </mat-form-field>
+
+      <input type="submit" value="Salvar">
+
+    </div>
+  </form>

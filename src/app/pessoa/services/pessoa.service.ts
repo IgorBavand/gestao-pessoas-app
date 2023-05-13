@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { PessoaDto } from '../dto/pessoa.dto';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,5 +13,13 @@ export class PessoaService {
 
   buscarPessoas() {
     return this.http.get<PessoaDto[]>(`${this.urlBase}/api/pessoas`);
+  }
+
+  salvarPessoa(dados: PessoaDto): Observable<HttpResponse<any>> {
+    console.log(dados);
+    return this.http.post<HttpResponse<any>>(
+      `${this.urlBase}/api/pessoas`,
+      dados
+    );
   }
 }
