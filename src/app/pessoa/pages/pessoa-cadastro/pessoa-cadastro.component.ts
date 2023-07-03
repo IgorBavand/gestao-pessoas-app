@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PessoaDto } from '../../dto/pessoa.dto';
 import { PessoaService } from '../../services/pessoa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pessoa-cadastro',
@@ -15,13 +16,17 @@ export class PessoaCadastroComponent {
     idade: 0,
   };
 
-  constructor(private service: PessoaService) {}
+  constructor(private service: PessoaService, private router: Router) {}
+
+  redirecionarParaRotaPessoa(): void {
+    this.router.navigate(['/pessoa']);
+  }
 
   salvarPessoa(dados: PessoaDto): void {
     this.service.salvarPessoa(dados).subscribe(
       (response) => {
-        console.log('Resposta:', response);
-        // lidar com a resposta da requisição aqui
+        console.log(dados.nome + ' Registrado com sucesso!');
+        this.redirecionarParaRotaPessoa();
       },
       (error) => {
         console.error('Erro na requisição:', error);

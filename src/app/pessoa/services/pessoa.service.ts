@@ -16,7 +16,6 @@ export class PessoaService {
   }
 
   salvarPessoa(dados: PessoaDto): Observable<HttpResponse<any>> {
-    console.log(dados);
     return this.http.post<HttpResponse<any>>(
       `${this.urlBase}/api/pessoas`,
       dados
